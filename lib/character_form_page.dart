@@ -5,7 +5,10 @@ import 'character.dart';
 class CharacterFormPage extends StatefulWidget {
   final Character? character;
 
-  const CharacterFormPage({Key? key, this.character}) : super(key: key);
+  const CharacterFormPage({
+    super.key,
+    this.character,
+  }); // ✅ Pakai super parameter
 
   @override
   State<CharacterFormPage> createState() => _CharacterFormPageState();
@@ -67,28 +70,28 @@ class _CharacterFormPageState extends State<CharacterFormPage> {
         title: Text(isEditing ? "Edit Character" : "Add Character"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Form(
           key: _formKey,
           child: Column(
             children: [
               TextFormField(
                 controller: _nameController,
-                decoration: InputDecoration(labelText: "Character Name"),
+                decoration: const InputDecoration(labelText: "Character Name"),
                 validator: (value) => value!.isEmpty ? "Name required" : null,
               ),
               TextFormField(
                 controller: _animeController,
-                decoration: InputDecoration(labelText: "Anime"),
+                decoration: const InputDecoration(labelText: "Anime"),
                 validator: (value) => value!.isEmpty ? "Anime required" : null,
               ),
               TextFormField(
                 controller: _imageUrlController,
-                decoration: InputDecoration(labelText: "Image URL"),
+                decoration: const InputDecoration(labelText: "Image URL"),
                 validator:
                     (value) => value!.isEmpty ? "Image URL required" : null,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _submitForm,
                 child: Text(isEditing ? "Update" : "Create"),

@@ -1,7 +1,7 @@
 buildscript {
     repositories {
-        google()       // ✅ WAJIB
-        mavenCentral() // ✅ Tambahan bagus
+        google()       
+        mavenCentral() 
     }
     dependencies {
         classpath("com.google.gms:google-services:4.3.15")
